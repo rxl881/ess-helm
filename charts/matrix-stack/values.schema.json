@@ -699,6 +699,15 @@
           "type": "object",
           "additionalProperties": false
         },
+        "serviceMonitors": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
         "nodeSelector": {
           "type": "object",
           "additionalProperties": {
