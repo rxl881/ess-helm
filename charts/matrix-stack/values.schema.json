@@ -1017,6 +1017,25 @@
                 ]
               }
             },
+            "extraEnv": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "value"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
             "annotations": {
               "type": "object",
               "additionalProperties": {
@@ -1068,26 +1087,14 @@
                 "rtcTcp": {
                   "type": "object",
                   "required": [
+                    "enabled",
                     "portType",
                     "port"
                   ],
                   "properties": {
-                    "portType": {
-                      "type": "string"
+                    "enabled": {
+                      "type": "boolean"
                     },
-                    "port": {
-                      "type": "number"
-                    }
-                  },
-                  "additionalProperties": false
-                },
-                "rtcUdp": {
-                  "type": "object",
-                  "required": [
-                    "portType",
-                    "port"
-                  ],
-                  "properties": {
                     "portType": {
                       "type": "string"
                     },
@@ -1098,6 +1105,26 @@
                   "additionalProperties": false
                 },
                 "rtcMuxedUdp": {
+                  "type": "object",
+                  "required": [
+                    "enabled",
+                    "portType",
+                    "port"
+                  ],
+                  "properties": {
+                    "enabled": {
+                      "type": "boolean"
+                    },
+                    "portType": {
+                      "type": "string"
+                    },
+                    "port": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "rtcUdp": {
                   "type": "object",
                   "required": [
                     "enabled",
